@@ -35,7 +35,7 @@ for (var i = 0; i < squadre.length; i++) {
 
 console.log(squadre);
 
-// 3.rimuovo i punti fatti dagli oggetti del precedente array
+// 3.creo un nuovo array con solo nome e falli subiti
 const falliSquadre = [];
 
 for (var i = 0; i < squadre.length; i++) {
