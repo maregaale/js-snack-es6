@@ -3,7 +3,7 @@
 // creo la funzione
 function intervalPositionArray (array, a, b) {
   let newArray = [];
-  for (var i = a; i <= b; i++) {
+  for (var i = a; i <= b && i < array.length; i++) {
     if (a < b == true) {
       newArray.push(array[i]);
     }
