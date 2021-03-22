@@ -21,12 +21,12 @@ const bici = [
 // 2.controllo quale bici ha il peso minore
 let biciLeggera = bici[0];
 
-for (var i = 1; i < bici.length; i++) {
+bici.forEach((item, index,array) => {
+  if (item["peso"] < biciLeggera["peso"]) {
+      biciLeggera = item;
+    }
+});
 
-  if (bici[i]["peso"] < bici[i-1]["peso"]) {
-    biciLeggera = bici[i];
-  }
-}
 
 // destrutturo l'oggetto biciLeggera
 let {marca, peso} = biciLeggera;

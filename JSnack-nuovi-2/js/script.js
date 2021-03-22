@@ -28,29 +28,21 @@ function numRandom(min, max) {
 }
 
 // 3.inserisco i numeri random al posto di punti fatti e falli subiti delle squadre
-for (var i = 0; i < squadre.length; i++) {
-  squadre[i]["puntiFatti"] = numRandom(1, 80);
-  squadre[i]["falliSubiti"] = numRandom(1, 12);
-}
+const squadreRndom = squadre.map((item) => {
 
-console.log(squadre);
+  item["puntiFatti"] = numRandom(1, 80);
+  item["falliSubiti"] = numRandom(1, 12);
 
-// 3.creo un nuovo array con solo nome e falli subiti
-const falliSquadre = [];
+  return item;
+});
 
-for (var i = 0; i < squadre.length; i++) {
+console.log(squadreRndom);
 
-  // creo oggetto squadra
-  var squadra = {};
-
-  // pusho l'oggetto nel nuovo array
-  falliSquadre.push(squadra);
-
+const falliSquadre = squadreRndom.map((element) => {
   // aggiungo le proprietà agli oggetti del nuovo array
-  let { nome, puntiFatti, falliSubiti } = squadre[i];
+  let { nome, puntiFatti, falliSubiti } = element;
 
-  falliSquadre[i]["nome"] = nome;
-  falliSquadre[i]["falliSubiti"] = falliSubiti;
-}
+  return {nome, falliSubiti};
+});
 
 console.log(falliSquadre);
